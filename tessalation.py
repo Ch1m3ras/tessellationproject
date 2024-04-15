@@ -1,6 +1,8 @@
 import turtle
+maxXRange = 1000
+maxYRange = 1000
 screen = turtle.Screen()
-screen.setup(1000,1000)
+screen.setup(maxXRange,maxYRange)
 screen.tracer(0)
 tessalationTurtle = turtle.Turtle()
 
@@ -53,4 +55,16 @@ def buildBasicShape():
         tessalationTurtle.forward(0.1)
         tessalationTurtle.right(0.1)
 
-buildBasicShape()
+def buildColumn(x):
+    for y in range(-1 * maxYRange, maxYRange, 199):
+        tessalationTurtle.setheading(0)
+        tessalationTurtle.penup()
+        tessalationTurtle.goto(x, y)
+        tessalationTurtle.pendown()
+        buildBasicShape()
+
+buildColumn(0)
+
+
+#This is just to make sure it stays on the screen with VS Code, you may disregard it. 
+input()
