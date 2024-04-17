@@ -5,6 +5,7 @@ maxYRange = 1000
 screen = turtle.Screen()
 screen.setup(maxXRange,maxYRange)
 screen.tracer(0)
+screen.colormode(255)
 tessalationTurtle = turtle.Turtle()
 
 def buildBasicShape():
@@ -63,7 +64,21 @@ def buildColumnOdd():
             tessalationTurtle.penup()
             tessalationTurtle.goto(x, y)
             tessalationTurtle.pendown()
+            colorX = x
+            colorY = y
+            if colorX > 255 or colorY > 255 or colorX < 0 or colorY < 0:
+                while colorX > 255:
+                    colorX = colorX - 255
+                while colorY > 255:
+                    colorY = colorY - 255
+                while colorX < 0:
+                    colorX = colorX + 255
+                while colorY < 0:
+                    colorY = colorY + 255
+            tessalationTurtle.color((int(colorX), int(colorY), int((colorX + colorY) / 2)))
+            tessalationTurtle.begin_fill()
             buildBasicShape()
+            tessalationTurtle.end_fill()
 
 def buildColumnEven():
     for x in range(int((-1 * maxXRange) + 172.5), int(maxXRange - 172.5), 345):
@@ -72,7 +87,21 @@ def buildColumnEven():
             tessalationTurtle.penup()
             tessalationTurtle.goto(x, y)
             tessalationTurtle.pendown()
+            colorX = x
+            colorY = y
+            if colorX > 255 or colorY > 255 or colorX < 0 or colorY < 0:
+                while colorX > 255:
+                    colorX = colorX - 255
+                while colorY > 255:
+                    colorY = colorY - 255
+                while colorX < 0:
+                    colorX = colorX + 255
+                while colorY < 0:
+                    colorY = colorY + 255
+            tessalationTurtle.color((int(colorX), int(colorY), int((colorX + colorY) / 2)))
+            tessalationTurtle.begin_fill()
             buildBasicShape()
+            tessalationTurtle.end_fill()
     
 
 buildColumnOdd()
