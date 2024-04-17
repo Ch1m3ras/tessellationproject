@@ -57,7 +57,7 @@ def buildBasicShape():
         tessalationTurtle.right(0.1)
 
 def buildColumnOdd():
-    for x in range(-1 * maxXRange, maxXRange, 330): #In order to change how close they are to each other, change the 3rd number (330 if you haven't edited it.) 
+    for x in range(-1 * maxXRange, maxXRange, 345):
         for y in range(-1 * maxYRange, maxYRange, 199):
             tessalationTurtle.setheading(0)
             tessalationTurtle.penup()
@@ -66,7 +66,7 @@ def buildColumnOdd():
             buildBasicShape()
 
 def buildColumnEven():
-    for x in range(int((-1 * maxXRange) + 165), int(maxXRange - 165), 330): #In order to change how close they are to each other, change the 3rd number (330 if you haven't edited it.) and the + or minus numbers(+ 165 and - 165) (its just 1/2 of the 3rd number)
+    for x in range(int((-1 * maxXRange) + 172.5), int(maxXRange - 172.5), 345):
         for y in range(int((-1 * maxYRange) - 99.5), int(maxYRange + 140), 199):
             tessalationTurtle.setheading(0)
             tessalationTurtle.penup()
